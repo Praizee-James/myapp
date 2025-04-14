@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-
 import '/home/user/myapp/lib/practice/question_page.dart';
 import '/home/user/myapp/lib/practice/user_goal_page.dart';
 import '/home/user/myapp/lib/practice/motivation_page.dart';
 import '/home/user/myapp/lib/practice/gender_page.dart';
 import 'package:intl/intl.dart';
-
-
-
 void main() {
   runApp(MyApp());
 }
