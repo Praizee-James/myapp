@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 import '/home/user/myapp/lib/practice/question_page.dart';
 import '/home/user/myapp/lib/practice/user_goal_page.dart';
 import '/home/user/myapp/lib/practice/motivation_page.dart';
 import '/home/user/myapp/lib/practice/gender_page.dart';
+import 'package:intl/intl.dart';
 
 
 
@@ -185,6 +187,43 @@ class OnboardingPage2 extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Food Logging App',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+          elevation: 0,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.grey[100],
+            foregroundColor: Colors.black,
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            padding: EdgeInsets.symmetric(vertical: 15.0),
+          ),
+        ),
+      ),
+      home: MenuPage(),
+      routes: {
+        '/logFood': (context) => LogFoodPage(),
+        '/scanner1': (context) => Scanner1(),
+        '/scanner2': (context) => Scanner2(),
+        '/describeMeal': (context) => DescribeMealPage(),
+        '/menuPage': (context) => MenuPage(),
+      },
     );
   }
 }
