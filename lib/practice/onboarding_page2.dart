@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'sign_in_page.dart'; // Import the sign-in page
-import 'start_page.dart'; // Import the start page (main app)
 
 class OnboardingPage2 extends StatelessWidget {
   const OnboardingPage2({super.key});
@@ -24,15 +23,9 @@ class OnboardingPage2 extends StatelessWidget {
             // App Name
             RichText(
               text: const TextSpan(
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 children: <TextSpan>[
-                  TextSpan(
-                    text: 'Eat',
-                    style: TextStyle(color: Colors.orange),
-                  ),
+                  TextSpan(text: 'Eat', style: TextStyle(color: Colors.orange)),
                   TextSpan(
                     text: 'Right',
                     style: TextStyle(color: Colors.green),
@@ -56,10 +49,7 @@ class OnboardingPage2 extends StatelessWidget {
             // Are you ready Text
             Text(
               'Are you ready for a\ntop level diet experience?',
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.black54,
-              ),
+              style: TextStyle(fontSize: 18, color: Colors.black54),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 50),
@@ -69,7 +59,7 @@ class OnboardingPage2 extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => StartPage()),
+                  MaterialPageRoute(builder: (context) => SignInPage()),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -80,10 +70,7 @@ class OnboardingPage2 extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              child: Text(
-                "Let's go",
-                style: TextStyle(color: Colors.white),
-              ),
+              child: Text("Let's go", style: TextStyle(color: Colors.white)),
             ),
             SizedBox(height: 20),
 
@@ -93,10 +80,7 @@ class OnboardingPage2 extends StatelessWidget {
               children: [
                 Text(
                   "Already have an account?",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey,
-                  ),
+                  style: TextStyle(fontSize: 14, color: Colors.grey),
                 ),
                 TextButton(
                   onPressed: () {
@@ -121,10 +105,7 @@ class OnboardingPage2 extends StatelessWidget {
             // Terms of Service
             Text(
               "You will be accepting our Terms of Service and Privacy Policy",
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey,
-              ),
+              style: TextStyle(fontSize: 12, color: Colors.grey),
               textAlign: TextAlign.center,
             ),
           ],

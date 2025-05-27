@@ -1,5 +1,7 @@
 // Menu Page
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,10 +12,7 @@ class MenuPage extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
         ),
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {},
-        ),
+        leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: () {}),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -70,12 +69,15 @@ class _CalendarViewState extends State<CalendarView> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-          color: Colors.grey[100], borderRadius: BorderRadius.circular(10)),
+        color: Colors.grey[100],
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: List.generate(7, (index) {
-          DateTime date =
-              DateTime.now().subtract(Duration(days: DateTime.now().weekday - 1)).add(Duration(days: index));
+          DateTime date = DateTime.now()
+              .subtract(Duration(days: DateTime.now().weekday - 1))
+              .add(Duration(days: index));
           return GestureDetector(
             onTap: () {
               setState(() {
@@ -92,12 +94,19 @@ class _CalendarViewState extends State<CalendarView> {
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        color: _selectedDate.day == date.day ? Colors.green : Colors.transparent,
-                        shape: BoxShape.circle),
+                      color:
+                          _selectedDate.day == date.day
+                              ? Colors.green
+                              : Colors.transparent,
+                      shape: BoxShape.circle,
+                    ),
                     child: Text(
                       date.day.toString(),
                       style: TextStyle(
-                        color: _selectedDate.day == date.day ? Colors.white : Colors.black,
+                        color:
+                            _selectedDate.day == date.day
+                                ? Colors.white
+                                : Colors.black,
                       ),
                     ),
                   ),

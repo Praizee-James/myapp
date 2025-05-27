@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '/home/user/myapp/lib/practice/question_page.dart';
-import '/home/user/myapp/lib/practice/user_goal_page.dart';
-import '/home/user/myapp/lib/practice/motivation_page.dart';
-import '/home/user/myapp/lib/practice/gender_page.dart';
-import 'package:intl/intl.dart';
+import 'package:myapp/practice/describeMealPage.dart';
+import 'package:myapp/practice/logFoodPage.dart';
+import 'package:myapp/practice/menuPage.dart';
+import 'package:myapp/practice/scanner1Page.dart';
+import 'package:myapp/practice/scanner2Page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -14,10 +15,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/logFood': (context) => LogFoodPage(),
+        '/scanner1': (context) => Scanner1(),
+        '/scanner2': (context) => Scanner2(),
+        '/describeMeal': (context) => DescribeMealPage(),
+        '/menuPage': (context) => MenuPage(),
+      },
       title: 'Eat Right',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: OnboardingPage(), // Set OnboardingPage as the initial home screen
     );
   }
@@ -43,23 +49,21 @@ class OnboardingPage extends StatelessWidget {
             SizedBox(height: 20),
 
             // App Name
-            
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OnboardingPage2()),
-                  );
-                },
-                child: Text('Continue'),
-              ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => OnboardingPage2()),
+                );
+              },
+              child: Text('Continue'),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
 
 class OnboardingPage2 extends StatelessWidget {
   const OnboardingPage2({super.key});
@@ -83,15 +87,9 @@ class OnboardingPage2 extends StatelessWidget {
             // App Name
             RichText(
               text: const TextSpan(
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 children: <TextSpan>[
-                  TextSpan(
-                    text: 'Eat',
-                    style: TextStyle(color: Colors.orange),
-                  ),
+                  TextSpan(text: 'Eat', style: TextStyle(color: Colors.orange)),
                   TextSpan(
                     text: 'Right',
                     style: TextStyle(color: Colors.green),
@@ -115,10 +113,7 @@ class OnboardingPage2 extends StatelessWidget {
             // Are you ready Text
             Text(
               'Are you ready for a\ntop level diet experience?',
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.black54,
-              ),
+              style: TextStyle(fontSize: 18, color: Colors.black54),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 50),
@@ -136,10 +131,7 @@ class OnboardingPage2 extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              child: Text(
-                "Let's go",
-                style: TextStyle(color: Colors.white),
-              ),
+              child: Text("Let's go", style: TextStyle(color: Colors.white)),
             ),
             SizedBox(height: 20),
 
@@ -149,10 +141,7 @@ class OnboardingPage2 extends StatelessWidget {
               children: [
                 Text(
                   "Already have an account?",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey,
-                  ),
+                  style: TextStyle(fontSize: 14, color: Colors.grey),
                 ),
                 TextButton(
                   onPressed: () {
@@ -174,52 +163,12 @@ class OnboardingPage2 extends StatelessWidget {
             // Terms of Service
             Text(
               "You will be accepting our Terms of Service and Privacy Policy",
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey,
-              ),
+              style: TextStyle(fontSize: 12, color: Colors.grey),
               textAlign: TextAlign.center,
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Food Logging App',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-          elevation: 0,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.grey[100],
-            foregroundColor: Colors.black,
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            padding: EdgeInsets.symmetric(vertical: 15.0),
-          ),
-        ),
-      ),
-      home: MenuPage(),
-      routes: {
-        '/logFood': (context) => LogFoodPage(),
-        '/scanner1': (context) => Scanner1(),
-        '/scanner2': (context) => Scanner2(),
-        '/describeMeal': (context) => DescribeMealPage(),
-        '/menuPage': (context) => MenuPage(),
-      },
     );
   }
 }

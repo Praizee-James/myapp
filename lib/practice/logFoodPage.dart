@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/practice/menuPage.dart';
+
 class LogFoodPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

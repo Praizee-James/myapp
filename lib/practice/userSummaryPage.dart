@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/practice/dietOptionPage.dart';
 
 class UserSummaryPage extends StatelessWidget {
   const UserSummaryPage({super.key});
@@ -30,8 +31,10 @@ class UserSummaryPage extends StatelessWidget {
             const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.all(15),
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.grey)),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey),
+              ),
               child: Column(
                 children: [
                   Row(
@@ -39,12 +42,18 @@ class UserSummaryPage extends StatelessWidget {
                     children: [
                       const Text('Current BMI', style: TextStyle(fontSize: 18)),
                       Container(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                        decoration:
-                            BoxDecoration(color: Colors.red, borderRadius.circular(5)),
-                        child:
-                            const Text('Extremely above average', style: TextStyle(color: Colors.white)),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: const Text(
+                          'Extremely above average',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ],
                   ),
@@ -66,7 +75,7 @@ class UserSummaryPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                    const SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -96,15 +105,23 @@ class UserSummaryPage extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 15,
+                ),
               ),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const DietOptionsPage()),
+                  MaterialPageRoute(
+                    builder: (context) => const CalorieTrackerPage(),
+                  ),
                 );
               },
-              child: const Text('Continue', style: TextStyle(fontSize: 18, color: Colors.white)),
+              child: const Text(
+                'Continue',
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
             ),
           ],
         ),
@@ -124,7 +141,10 @@ class UserSummaryPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(label, style: const TextStyle(fontSize: 18)),
-          Text(value, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          Text(
+            value,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ],
       ),
     );
