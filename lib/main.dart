@@ -4,6 +4,7 @@ import 'package:myapp/practice/logFoodPage.dart';
 import 'package:myapp/practice/menuPage.dart';
 import 'package:myapp/practice/scanner1Page.dart';
 import 'package:myapp/practice/scanner2Page.dart';
+import 'package:myapp/practice/start_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,6 +46,9 @@ class OnboardingPage extends StatelessWidget {
               'https://pplx-res.cloudinary.com/image/upload/v1740064995/user_uploads/UeTKObRtDvPATaB/Onboarding.jpg', // Replace with your actual image path
               width: 500,
               height: 500,
+              errorBuilder: (context, error, stackTrace) {
+                return Icon(Icons.error); // Fallback widget
+              },
             ),
             SizedBox(height: 20),
 
@@ -81,6 +85,9 @@ class OnboardingPage2 extends StatelessWidget {
               'https://pplx-res.cloudinary.com/image/upload/v1740076382/user_uploads/wvGwTyZkvFrkDfV/onboarding2.jpg', // Replace with your actual image path
               width: 200,
               height: 200,
+              errorBuilder: (context, error, stackTrace) {
+                return Icon(Icons.error); // Fallback widget
+              },
             ),
             SizedBox(height: 20),
 
@@ -122,6 +129,11 @@ class OnboardingPage2 extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // TODO: Navigate to the main page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignInPageChoice()),
+                );
+                
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
