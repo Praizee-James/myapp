@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/practice/signup_screen1.dart';
 import 'package:myapp/practice/signup_screen2.dart';
 
 class SignInPageChoice extends StatelessWidget {

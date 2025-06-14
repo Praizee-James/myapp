@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/create_accountdart';
 
 class SignUpScreen3 extends StatelessWidget {
   @override
@@ -11,23 +12,24 @@ class SignUpScreen3 extends StatelessWidget {
           children: [
             TextField(decoration: InputDecoration(labelText: 'State of Origin')),
             TextField(decoration: InputDecoration(labelText: 'User\'s Weight')),
-            TextField(decoration:
-                InputDecoration(labelText: 'User\'s Height')),
-            TextField(decoration:
-                InputDecoration(labelText: 'User\'s Age')),
-            TextField(decoration:
-                InputDecoration(labelText: 'User\'s BMI')),
+            TextField(decoration: InputDecoration(labelText: 'User\'s Height')),
+            TextField(decoration: InputDecoration(labelText: 'User\'s Age')),
+            TextField(decoration: InputDecoration(labelText: 'User\'s BMI')),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Handle final submission or navigation.
+                // Show success message
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content:
-                      Text('Account successfully created!'),
+                  content: Text('Account successfully created!'),
                 ));
+
+                // Navigate to HomeScreen
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => CreateAccountPage()),
+                );
               },
-              child:
-                  Text('Finish'),
+              child: Text('Finish'),
             ),
           ],
         ),
